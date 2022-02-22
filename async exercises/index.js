@@ -29,7 +29,7 @@ setTimeout(delayedGreet, 3000)
 
 function helloGoodbye() {
   console.log("hello")
-  setTimeout(console.log('good bye'), 2000)
+  setTimeout(() => console.log('good bye'), 2000)
 } 
 
 helloGoodbye()
