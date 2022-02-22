@@ -23,3 +23,13 @@ function delayedGreet() {
 }
 
 setTimeout(delayedGreet, 3000)
+
+
+// Challenge 3
+
+function helloGoodbye() {
+  console.log("hello")
+  setTimeout(console.log('good bye'), 2000)
+} 
+
+helloGoodbye()
