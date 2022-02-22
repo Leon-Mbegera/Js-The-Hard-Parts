@@ -33,3 +33,16 @@ function helloGoodbye() {
 } 
 
 helloGoodbye()
+
+
+// Challenge 4
+
+function brokenRecord() {
+  console.log("hi again")
+  setTimeout(brokenRecord, 1000)
+}
+
+brokenRecord()
+
+
+
