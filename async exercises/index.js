@@ -37,12 +37,37 @@ helloGoodbye()
 
 // Challenge 4
 
-function brokenRecord() {
-  console.log("hi again")
-  setTimeout(brokenRecord, 1000)
+// function brokenRecord() {
+//   console.log("hi again")
+//   setTimeout(brokenRecord, 1000)
+// }
+
+// brokenRecord
+
+
+// Challenge 5
+
+function everyXsecsForYsecs(func, interval, duration) {
+  while (interval < duration) {
+    setTimeout(func, interval)
+    duration = duration - interval
+  }
 }
 
-brokenRecord()
+function sayHi() {
+  console.log('hi')
+}
 
+everyXsecsForYsecs(sayHi, 1000, 5000)
 
+function everyXsecsForYsecs(func, interval, duration) {
+  const intervalId = setInterval(func, interval * 1000);
+  setTimeout(() => clearInterval(intervalId), duration * 1000);
+}
+
+function theEnd() {
+  console.log('This is the end!');
+}
+
+everyXsecsForYsecs(theEnd, 2, 20);
 
