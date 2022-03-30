@@ -1,0 +1,22 @@
+#viewer {
+  height: 40px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+  position:relative;
+  background-color: black;
+  color: white;
+  border-radius: 7px;
+}
+
+div::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: wheat;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%)
+            rotate(45deg)
+}
