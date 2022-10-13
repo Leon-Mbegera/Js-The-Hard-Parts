@@ -40,8 +40,8 @@ promise.catch(() => console.log("Rejected"));
 promise = new Promise(function(resolve, reject) {
   resolve();
 })
-promise.then(() => console.log("Promise has been resolved!"));
-console.log("I'm not the promise");
+promise.then(() => console.log("Promise has been resolved!")); // this line will show in the console after the one just below it.
+console.log("I'm not the promise");  // this line will show in the console before the one just above it
 
 
 // Challenge 5
@@ -49,7 +49,7 @@ console.log("I'm not the promise");
 
 function delay(){
   let promise = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 10000)
+    setTimeout(resolve, 5000)
   })
   return promise;
 }
@@ -74,6 +74,8 @@ let firstPromise = new Promise(function(resolve, reject) {
 firstPromise.then((value) => console.log(value));
 
 
+// Challenge 7
+// We have a API that gets data from a database, it takes an index parameter and returns a promise Your challenge is to use Promise.all to make 3 API calls and return all the data when the calls are complete
 
 const fakePeople = [
   { name: 'Rudolph', hasPets: false, currentTemp: 98.6 },
