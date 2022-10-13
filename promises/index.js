@@ -57,3 +57,18 @@ function delay(){
 // Uncomment the code below to test
 // This code should log "Hello" after 1000ms
 delay().then(sayHello);
+
+
+// Challenge 6
+// In this challenge we'll chain promises together using ".then" Create two variables: firstPromise and secondPromise Set secondPromise to be a promise that resolves to "Second!" Set firstPromise to be a promise that resolves to secondPromise Call the firstPromise with a ".then", which will return the secondPromise> promise. Then print the contents of the promise after it has been resolved by passing console.log to .then
+
+let secondPromise = new Promise(function(resolve, reject) {
+  resolve("Second!");
+})
+
+let firstPromise = new Promise(function(resolve, reject) {
+  resolve(secondPromise);
+});
+
+
+firstPromise.then((value) => console.log(value));
