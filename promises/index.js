@@ -22,12 +22,38 @@ let promise = new Promise(function (resolve, reject) {
 
 // Should print out "Resolved!"
 // ADD CODE HERE
-promise.then(console.log("Resolved"));
+promise.then(() => console.log("Resolved"));
 
 
 // Challenge 3
 // Create another promise. Now have it reject with a value of "Rejected!" without using setTimeout. Print the contents of the promise after it has been rejected by passing console.log to .catch
 
 promise = new Promise(function(resolve, reject){
+  reject();
 })
-promise.catch(console.log("Rejected"));
+promise.catch(() => console.log("Rejected"));
+
+
+// Challenge 4
+// Promises are asynchronous and we're now going to prove that they indeed are! Create a promise and have it resolve with the value of "Promise has been resolved!" Then uncomment the code at bottom of Challenge 4. What order do we expect "Promise has been resolved!" and "I'm not the promise!" to print? Why?
+
+promise = new Promise(function(resolve, reject) {
+  resolve();
+})
+promise.then(() => console.log("Promise has been resolved!"));
+console.log("I'm not the promise");
+
+
+// Challenge 5
+// Write a function delay that returns a promise. And that promise should return a setTimeout that calls resolve after 1000ms
+
+function delay(){
+  let promise = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 1000)
+  })
+  return promise;
+}
+
+// Uncomment the code below to test
+// This code should log "Hello" after 1000ms
+delay().then(sayHello);
