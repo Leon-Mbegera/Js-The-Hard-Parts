@@ -49,7 +49,7 @@ console.log("I'm not the promise");
 
 function delay(){
   let promise = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 1000)
+    setTimeout(resolve, 10000)
   })
   return promise;
 }
