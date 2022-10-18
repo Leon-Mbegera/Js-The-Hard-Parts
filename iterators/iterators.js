@@ -48,13 +48,35 @@ function nextIterator(arr) {
         return current;
     }}
 }
-  
+
 // Uncomment the lines below to test your work
 // const array3 = [1, 2, 3];
 // const iteratorWithNext = nextIterator(array3);
 // console.log(iteratorWithNext.next()); // -> should log 1
 // console.log(iteratorWithNext.next()); // -> should log 2
 // console.log(iteratorWithNext.next()); // -> should log 3
+
+
+
+// Challenge 3
+// Write code to iterate through an entire array using your nextIterator and sum the values.
+
+function sumArray(arr) {
+    // YOUR CODE HERE
+    // use your nextIterator function
+    let sum = 0;
+    const iteratorWithNext = nextIterator(arr)
+    for (let i = 0; i < arr.length; i++) {
+        sum += iteratorWithNext.next();
+    }
+    return sum;
+
+}
+  
+  // Uncomment the lines below to test your work
+  const array4 = [1, 2, 3, 4];
+  console.log(sumArray(array4)); // -> should log 10
+
   
 
 
