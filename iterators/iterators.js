@@ -74,10 +74,74 @@ function sumArray(arr) {
 }
   
   // Uncomment the lines below to test your work
-  const array4 = [1, 2, 3, 4];
-  console.log(sumArray(array4)); // -> should log 10
+//   const array4 = [1, 2, 3, 4];
+//   console.log(sumArray(array4)); // -> should log 10
+
+
+// Challenge 4
+// Create an iterator with a next method that returns each value of a set when .next is called
+
+
+function setIterator(set) {
+    // YOUR CODE HERE
+    let i = 0;
+    return {
+        next: function next() {
+        const current = arr[i];
+        i++;
+        return current;
+    }}
+}
+  
+// Uncomment the lines below to test your work
+// const mySet = new Set('hey');
+// const iterateSet = setIterator(mySet);
+// console.log(iterateSet.next()); // -> should log 'h'
+// console.log(iterateSet.next()); // -> should log 'e'
+// console.log(iterateSet.next()); // -> should log 'y'
 
   
 
 
+// Challenge 5
+// Create an iterator with a next method that returns an array with two elements (where the first element is the index and the second is the value at that index) when .next is called.
+
+
+function indexIterator(arr) {
+    // YOUR CODE HERE
+  
+}
+  
+  // Uncomment the lines below to test your work
+  // const array5 = ['a', 'b', 'c', 'd'];
+  // const iteratorWithIndex = indexIterator(array5);
+  // console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
+  // console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
+  // console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
+  
+
+
+//   Challenge 5
+// Create an iterator with a next method that returns an array with two elements (where the first element is the index and the second is the value at that index) when .next is called.
+
+
+function indexIterator(arr) {
+    // YOUR CODE HERE
+    let i = 0;
+    return {
+        next: function next() {
+        const idx = i;
+        const current = arr[i];
+        i++;
+        return [idx, current];
+    }}
+  
+}
+  
+// Uncomment the lines below to test your work
+const array5 = ['a', 'b', 'c', 'd'];
+const iteratorWithIndex = indexIterator(array5);
+console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
+console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
+console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
 
