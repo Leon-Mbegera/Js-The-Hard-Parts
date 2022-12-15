@@ -107,3 +107,30 @@ const simon = new PersonConstructor();
 
 // Uncomment this line to check your work!
 simon.greet(); // -> Logs 'hello'
+
+
+
+// Challenge: personFromConstructor
+// Create a function personFromConstructor that takes as input a name and an age. When called, the function will create person objects using the new keyword instead of the Object.create method.
+
+
+function PersonConstructor(name, age) {
+    this.greet = function () {
+        console.log('hello');
+    }
+    this.name = name;
+    this.age = age;
+}
+
+function personFromConstructor(name, age) {
+    // add code here
+    return new PersonConstructor(name, age)
+
+}
+
+const mike = personFromConstructor('Mike', 30);
+
+// Uncomment these lines to check your work!
+// console.log(mike.name); // -> Logs 'Mike'
+// console.log(mike.age); // -> Logs 30
+// mike.greet(); // -> Logs 'hello'
