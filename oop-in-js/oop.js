@@ -25,3 +25,18 @@ const vicky = makePerson('Vicky', 24);
 // Uncomment these lines to check your work!
 // console.log(vicky.name); // -> Logs 'Vicky'
 // console.log(vicky.age); // -> Logs 24
+
+
+
+// Challenge: personStore
+// Inside personStore object, create a property greet where the value is a function that logs "hello".
+
+const personStore = {
+    // add code here
+    greet: function () {
+        console.log("hello")
+    }
+};
+
+// Uncomment this line to check your work!
+personStore.greet(); // -> Logs 'hello'
