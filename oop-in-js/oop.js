@@ -39,4 +39,24 @@ const personStore = {
 };
 
 // Uncomment this line to check your work!
-personStore.greet(); // -> Logs 'hello'
+// personStore.greet(); // -> Logs 'hello'
+
+
+
+// Challenge: personFromPersonStore
+// Create a function personFromPersonStore that takes as input a name and an age. When called, the function will create person objects using the Object.create method on the personStore object.
+
+function personFromPersonStore(name, age) {
+    // add code here
+    const personObj = Object.create(personStore)
+    personObj.name = name;
+    personObj.age = age;
+    return personObj;
+}
+
+const sandra = personFromPersonStore('Sandra', 26);
+
+  // Uncomment these lines to check your work!
+//   console.log(sandra.name); // -> Logs 'Sandra'
+//   console.log(sandra.age); // -> Logs 26
+//   sandra.greet(); // -> Logs 'hello'
