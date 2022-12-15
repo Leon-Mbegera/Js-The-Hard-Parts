@@ -56,7 +56,7 @@ function personFromPersonStore(name, age) {
 
 const sandra = personFromPersonStore('Sandra', 26);
 
-  // Uncomment these lines to check your work!
+// Uncomment these lines to check your work!
 //   console.log(sandra.name); // -> Logs 'Sandra'
 //   console.log(sandra.age); // -> Logs 26
 //   sandra.greet(); // -> Logs 'hello'
@@ -67,25 +67,43 @@ const sandra = personFromPersonStore('Sandra', 26);
 
 
 const personStore = {
-    greet: function() {
-      console.log('hello');
+    greet: function () {
+        console.log('hello');
     },
-    introduce: function() {
-        console.log(Hi, my name is ${this.name})
-      }
-  }
-  
-  function personFromPersonStore(name, age) {
-      const person = Object.create(personStore);
+    introduce: function () {
+        console.log(Hi, my name is ${ this.name })
+    }
+}
+
+function personFromPersonStore(name, age) {
+    const person = Object.create(personStore);
     person.name = name;
     person.age = age;
     return person;
-  }
-  
-  const sandra = personFromPersonStore('Sandra', 26);
-  
-  // add code here
-  
-  
-  // Uncomment this line to check your work!
+}
+
+const sandra = personFromPersonStore('Sandra', 26);
+
+// add code here
+
+
+// Uncomment this line to check your work!
 //   sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
+
+
+// Challenge: PersonConstructor
+// Create a function PersonConstructor that uses the this keyword to save a single property onto its scope called greet. greet should be a function that logs the string "hello".
+
+
+function PersonConstructor() {
+    // add code here
+    this.greet = function () {
+        console.log("hello")
+    }
+
+}
+
+const simon = new PersonConstructor();
+
+// Uncomment this line to check your work!
+simon.greet(); // -> Logs 'hello'
