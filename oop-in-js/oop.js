@@ -31,7 +31,7 @@ const vicky = makePerson('Vicky', 24);
 // Challenge: personStore
 // Inside personStore object, create a property greet where the value is a function that logs "hello".
 
-const personStore = {
+let personStore = {
     // add code here
     greet: function () {
         console.log("hello")
@@ -54,7 +54,7 @@ function personFromPersonStore(name, age) {
     return personObj;
 }
 
-const sandra = personFromPersonStore('Sandra', 26);
+let sandra = personFromPersonStore('Sandra', 26);
 
 // Uncomment these lines to check your work!
 //   console.log(sandra.name); // -> Logs 'Sandra'
@@ -66,12 +66,12 @@ const sandra = personFromPersonStore('Sandra', 26);
 // Without editing the code you've already written, add an introduce method to the personStore object that logs "Hi, my name is [name]".
 
 
-const personStore = {
+personStore = {
     greet: function () {
         console.log('hello');
     },
     introduce: function () {
-        console.log(Hi, my name is ${ this.name })
+        console.log(`Hi, my name is ${this.name}`)
     }
 }
 
@@ -82,7 +82,7 @@ function personFromPersonStore(name, age) {
     return person;
 }
 
-const sandra = personFromPersonStore('Sandra', 26);
+sandra = personFromPersonStore('Sandra', 26);
 
 // add code here
 
@@ -128,15 +128,12 @@ function personFromConstructor(name, age) {
 
 }
 
-const mike = personFromConstructor('Mike', 30);
+let mike = personFromConstructor('Mike', 30);
 
 // Uncomment these lines to check your work!
 // console.log(mike.name); // -> Logs 'Mike'
 // console.log(mike.age); // -> Logs 30
 // mike.greet(); // -> Logs 'hello'
-
-
-
 
 
 
@@ -161,10 +158,41 @@ function personFromConstructor(name, age) {
     return person;
 }
 
-const mike = personFromConstructor('Mike', 30);
-
-// add code here
-
+mike = personFromConstructor('Mike', 30);
 
 // Uncomment this line to check your work!
 mike.introduce(); // -> Logs 'Hi, my name is Mike'
+
+
+
+
+
+
+// Challenge: Dog Constructor
+// Declare a function Dog that creates a new instance of a Dog object when invoked with the new keyword. Each Dog object should have a name property and a breed property, both strings which are passed in as arguments when calling the Dog function. It should also have a property called tricks, set to an array representing all the tricks that dog knows. When a new object is initiated, tricks should be empty.
+
+// All of your Dog objects must also have access to two methods that are stored on the constructor's prototype:
+
+// The first method, learnTrick, should take in a string as an argument and add that string to the tricks array of the particular Dog object it was called on.
+
+// The second method, performTrick, should also take a string as an argument. It should check to see if that string is in the tricks array belonging to the Dog instance it was called on; if so, it should log the string 'name performed trick!' If not, log the string 'name doesn't know that trick.
+
+
+function Dog(name, breed) {
+    // add code here
+    this.name = name;
+    this.breed = breed;
+    this.tricks = [];
+}
+
+Dog.prototype.learnTrick = function (trick) { this.tricks.push(trick) }
+Dog.prototype.performTrick = function (perform) {
+    if (this.tricks.includes(perform)) console.log(`${this.name} performed ${perform}!`)
+    else console.log(`${this.name} doesn't know that trick.`)
+}
+const fido = new Dog('Fido', 'poodle');
+
+// Uncomment these lines to check your work!
+// fido.learnTrick('fetch');
+// fido.performTrick('fetch'); // should log 'Fido performed fetch!'
+// fido.performTrick('sit'); // should log 'Fido doesn't know that trick.'
