@@ -40,4 +40,24 @@ const map = (array, callback) => {
     return outputArray;
 };
 
-console.log(map([1, 2, 3], addTwo));
+// console.log(map([1, 2, 3], addTwo));
+
+
+
+
+// Challenge 4
+// The function forEach takes an array and a callback, and runs the callback on each element of the array. forEach does not return anything.
+
+let alphabet = '';
+const letters = ['a', 'b', 'c', 'd'];
+
+const forEach = (array, callback) => {
+
+    for (let i = 0; i < array.length; i++) {
+        callback(array[i]);
+    }
+};
+
+// See for yourself if your forEach works!
+// forEach(letters, char => alphabet += char);
+// console.log(alphabet);   //prints 'abcd'
