@@ -61,3 +61,20 @@ const forEach = (array, callback) => {
 // See for yourself if your forEach works!
 // forEach(letters, char => alphabet += char);
 // console.log(alphabet);   //prints 'abcd'
+
+
+
+// Challenge 5
+// For this challenge, you're going to rebuild map as mapWith. This time you're going to use forEach inside of mapWith instead of using a for loop.
+
+
+const mapWith = (array, callback) => {
+    const outputArray = [];
+
+    forEach(array, el => outputArray.push(callback(ele)))
+    return outputArray;
+};
+
+
+
+
