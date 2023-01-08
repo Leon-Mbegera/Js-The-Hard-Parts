@@ -245,8 +245,9 @@ const user = new Construct("John Doe", "John.doe@example.com")
 
 for (const key in user) {
 
-    // console.log(`${key}: ${user[key]}`);
+    if (user.hasOwnProperty(key)) console.log(`${key}: ${user[key]}`);
 }
+
 
 
 
