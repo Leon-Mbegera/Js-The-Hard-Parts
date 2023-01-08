@@ -166,3 +166,30 @@ const objOfMatches = (array1, array2, callback) => {
 
 
 
+// Challenge 10
+// Construct a function multiMap that will accept two arrays: an array of values and an array of callbacks. multiMap will return an object whose keys match the elements in the array of values. The corresponding values that are assigned to the keys will be arrays consisting of outputs from the array of callbacks, where the input to each callback is the key.
+
+const multiMap = (arrVals, arrCallbacks) => {
+
+    const multiMapObj = {};
+
+    for (let i = 0; i < arrVals.length; i++) {
+        const outputVals = []
+        for (let j = 0; j < arrCallbacks.length; j++) {
+            outputVals.push(arrCallbacks[j](arrVals[i]))
+        }
+        multiMapObj[arrVals[i]] = outputVals;
+    }
+
+    return multiMapObj;
+
+};
+
+// console.log(multiMap(['catfood', 'glue', 'beer'], [(str) => str.toUpperCase(), (str) => str[0].toUpperCase() + str.slice(1).toLowerCase(), (str) => str + str]));
+// should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
+
+
+
+
+
+
