@@ -210,24 +210,7 @@ const commutative = (func1, func2, value) => {
 
 
 
-// Challenge 12
-// Create a function objFilter that accepts an object and a callback. objFilter should make a new object, and then iterate through the passed-in object, using each key as input for the callback. If the output from the callback is equal to the corresponding value, then that key-value pair is copied into the new object. objFilter will return this new object.
-
-
-const objFilter = (obj, callback) => {
-
-    const newFilterObj = {};
-
-};
-
-// /*** Uncomment these to check your work! ***/
-// const startingObj = {};
-// startingObj[6] = 3;
-// startingObj[2] = 1;
-// startingObj[12] = 4;
-// const half = n => n / 2;
-// console.log(objFilter(startingObj, half)); // should log: { 2: 1, 6: 3 }
-
+// --------------------------------------------------
 
 function Construct(name, email) {
 
@@ -245,8 +228,50 @@ const user = new Construct("John Doe", "John.doe@example.com")
 
 for (const key in user) {
 
-    if (user.hasOwnProperty(key)) console.log(`${key}: ${user[key]}`);
+    if (user.hasOwnProperty(key)) {
+        // console.log(`${key}: ${user[key]}`);
+    }
 }
+
+
+
+// --------------------------------------------------
+
+
+
+// Challenge 12
+// Create a function objFilter that accepts an object and a callback. objFilter should make a new object, and then iterate through the passed-in object, using each key as input for the callback. If the output from the callback is equal to the corresponding value, then that key-value pair is copied into the new object. objFilter will return this new object.
+
+
+const objFilter = (obj, callback) => {
+
+    const newFilterObj = {};
+
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (obj[key] === callback(key)) {
+                newFilterObj[key] = key;
+            }
+        }
+    }
+
+    return newFilterObj;
+
+};
+
+// /*** Uncomment these to check your work! ***/
+const startingObj = {};
+startingObj[6] = 3;
+startingObj[2] = 1;
+startingObj[12] = 4;
+const half = n => n / 2;
+console.log(objFilter(startingObj, half)); // should log: { 2: 1, 6: 3 }
+
+
+
+
+
+
 
 
 
