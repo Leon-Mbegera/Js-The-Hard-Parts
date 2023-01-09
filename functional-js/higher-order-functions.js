@@ -336,13 +336,13 @@ const highestFunc = (objOfFuncs, subject) => {
 };
 
 // /*** Uncomment these to check your work! ***/
-const groupOfFuncs = {};
-groupOfFuncs.double = n => n * 2;
-groupOfFuncs.addTen = n => n + 10;
-groupOfFuncs.inverse = n => n * -1;
-console.log(highestFunc(groupOfFuncs, -5)); // should log: '15'
-console.log(highestFunc(groupOfFuncs, -11)); // should log: '22'
-console.log(highestFunc(groupOfFuncs, -20)); // should log: '20'
+// const groupOfFuncs = {};
+// groupOfFuncs.double = n => n * 2;
+// groupOfFuncs.addTen = n => n + 10;
+// groupOfFuncs.inverse = n => n * -1;
+// console.log(highestFunc(groupOfFuncs, 5));
+// console.log(highestFunc(groupOfFuncs, 11));
+// console.log(highestFunc(groupOfFuncs, 20));
 
 
 
